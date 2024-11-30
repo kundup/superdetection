@@ -1,24 +1,26 @@
 console.log("hello world");
-var kenpic = new Image();
-var kenpicx = 0;
+var kenPicx = 0;
+
 
 window.onload = function () {
-    // Canvas öğesini seç ve bağlamı al
+    imageLoad();     
+}
+
+function loadingDone(){
+
     game = document.getElementById("superfighters");
     graph = game.getContext("2d");
 
-    // Resim kaynağını tanımla
-    kenpic.src = "images/ken1.png";        
-
-
-    function animate () {
-
+    
+    function fighterAnimate () {
+    
         graph.clearRect(0, 0, game.width, game.height);
-        kenpicx += 1;        
-        graph.drawImage(kenpic, kenpicx, 0, kenpic.width * 1.5 , kenpic.height * 1.5);              
-        window.requestAnimationFrame(animate);       
+        kenPicx += 1;        
+        graph.drawImage(kenPic, kenPicx, 0, kenPic.width * 1.5 , kenPic.height * 1.5);              
+        window.requestAnimationFrame(fighterAnimate);       
     }
-
-    window.requestAnimationFrame(animate);
-
+    
+    window.requestAnimationFrame(fighterAnimate);
+    
 }
+
