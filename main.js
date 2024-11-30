@@ -1,5 +1,6 @@
 console.log("hello world");
 var kenPicx = 0;
+var kenSpeed = 1;
 
 
 window.onload = function () {
@@ -8,15 +9,19 @@ window.onload = function () {
 
 function loadingDone(){
 
-    game = document.getElementById("superfighters");
-    graph = game.getContext("2d");
+    canvasEl = document.getElementById("superfighters");
+    graph = canvasEl.getContext("2d");
 
     
     function fighterAnimate () {
     
-        graph.clearRect(0, 0, game.width, game.height);
-        kenPicx += 1;        
-        graph.drawImage(kenPic, kenPicx, 0, kenPic.width * 1.5 , kenPic.height * 1.5);              
+        graph.drawImage (Bg, 0, 0);
+        kenPicx += kenSpeed;
+        if (kenPicx >= canvasEl.width - kenPic.width || kenPicx < 0){
+            kenSpeed *= -1;
+        }        
+        graph.drawImage(kenPic, kenPicx, 115, kenPic.width  , kenPic.height);              
+    
         window.requestAnimationFrame(fighterAnimate);       
     }
     
