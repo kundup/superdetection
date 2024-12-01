@@ -1,15 +1,24 @@
-var kenPicx = 0;
-var kenSpeed = 1;
 
-export function updateKen(kenPic, canvasEl) {
-    kenPicx += kenSpeed;
-    if (kenPicx >= canvasEl.width - kenPic.width || kenPicx < 0){
-    kenSpeed *= -1;
+export class Ken {
+
+    constructor(){
+        this.kenPicx = 0;
+        this.kenSpeed = 1;
     }
+
+    updateKen(kenPic, canvasEl) {
+        this.kenPicx += this.kenSpeed;
+        if (this.kenPicx >= canvasEl.width - kenPic.width || this.kenPicx < 0){
+        this.kenSpeed *= -1;
+        }
+    }
+    
+    drawKen(kenPic, graph){
+        graph.drawImage(kenPic,this.kenPicx, 115, kenPic.width  , kenPic.height);
+    }
+
 }
 
-export function drawKen(kenPic, graph){
-    graph.drawImage(kenPic, kenPicx, 115, kenPic.width  , kenPic.height);
-}
+
 
 
