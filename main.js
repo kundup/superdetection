@@ -1,15 +1,17 @@
+import { kenPic, Bg, imageLoad } from "./imageloading.js";
+
 console.log("hello world");
 var kenPicx = 0;
 var kenSpeed = 1;
 
 window.onload = function () {
-    imageLoad();     
+    imageLoad(loadingDone);     
 }
 
 function loadingDone(){
 
-    canvasEl = document.getElementById("superfighters");
-    graph = canvasEl.getContext("2d");
+    const canvasEl = document.getElementById ("superfighters");
+    const graph = canvasEl.getContext ("2d");
     
     function fighterAnimate () {
     
@@ -23,7 +25,6 @@ function loadingDone(){
         window.requestAnimationFrame(fighterAnimate);       
     }
     
-    window.requestAnimationFrame(fighterAnimate);
-    
+    window.requestAnimationFrame(fighterAnimate);    
 }
 

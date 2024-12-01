@@ -1,15 +1,14 @@
-var kenPic = new Image();
-var Bg = new Image();
-var picCounts = [];
+const kenPic = new Image();
+const Bg = new Image();
 
-function imageLoad(){
-
+function imageLoad(loadingDone){
+    
+    var picCounts = [];
     picCounts = [        
         {pic : kenPic, src: "images/ken1.png"},
         {pic : Bg, src: "images/background.png"},
     ]    
     var picCountslength = picCounts.length;
-
     for (let i = 0; i < picCounts.length; i++ ){
 
         picCounts[i].pic.src = picCounts[i].src;         
@@ -22,5 +21,4 @@ function imageLoad(){
     }    
 }
 
- 
-
+export { kenPic, Bg, imageLoad };
