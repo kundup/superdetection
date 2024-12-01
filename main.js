@@ -2,7 +2,6 @@ console.log("hello world");
 var kenPicx = 0;
 var kenSpeed = 1;
 
-
 window.onload = function () {
     imageLoad();     
 }
@@ -11,7 +10,6 @@ function loadingDone(){
 
     canvasEl = document.getElementById("superfighters");
     graph = canvasEl.getContext("2d");
-
     
     function fighterAnimate () {
     

@@ -1,8 +1,6 @@
 var kenPic = new Image();
 var Bg = new Image();
-
 var picCounts = [];
-
 
 function imageLoad(){
 
