@@ -1,8 +1,10 @@
-import { kenPic, Bg, imageLoad } from "./imageloading.js";
+import { kenPic, ryuPic, Bg, imageLoad } from "./imageloading.js";
+import { Ryu } from "./ryu.js";
 import { Ken } from "./ken.js";
 
 
 const ken = new Ken();
+const ryu = new Ryu();
 
 
 console.log("hello world");
@@ -19,7 +21,9 @@ function loadingDone(){
     
         graph.drawImage (Bg, 0, 0);
         ken.drawKen (kenPic, graph);
-        ken.updateKen(kenPic, canvasEl);   
+        ken.updateKen(kenPic, canvasEl);
+        ryu.drawRyu(ryuPic, graph);
+        ryu.updateRyu(ryuPic, canvasEl)  
         window.requestAnimationFrame(fighterAnimate);       
     }    
     window.requestAnimationFrame(fighterAnimate);    
