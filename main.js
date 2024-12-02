@@ -2,18 +2,16 @@ import { kenPic, ryuPic, Bg, imageLoad } from "./imageloading.js";
 import { Ryu } from "./ryu.js";
 import { Ken } from "./ken.js";
 
-
-const ken = new Ken(kenPic);
-const ryu = new Ryu(ryuPic);
-
-
 console.log("hello world");
 
 window.onload = function () {
-    imageLoad(loadingDone);     
+    imageLoad(loadingDone);    
 }
+    
 function loadingDone(){
 
+    const ken = new Ken(kenPic);
+    const ryu = new Ryu(ryuPic);
     const canvasEl = document.getElementById ("superfighters");
     const graph = canvasEl.getContext ("2d");
     

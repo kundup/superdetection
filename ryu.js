@@ -16,7 +16,7 @@ export class Ryu {
     drawRyu(graph){
         graph.drawImage(this.image, this.ryuPicx, 110, this.image.width, this.image.height);
     }
-
 }
+
 
 
