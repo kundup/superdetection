@@ -1,20 +1,21 @@
 
 export class Ken {
 
-    constructor(){
+    constructor(image){
         this.kenPicx = 0;
         this.kenSpeed = 1;
+        this.image = image
     }
 
-    updateKen(kenPic,canvasEl) {
+    updateKen(canvasEl) {
         this.kenPicx += this.kenSpeed;
-        if (this.kenPicx >= canvasEl.width - kenPic.width || this.kenPicx < 0){
+        if (this.kenPicx >= canvasEl.width - this.image.width || this.kenPicx < 0){
         this.kenSpeed *= -1;
         }
     }
     
-    drawKen(kenPic, graph){
-        graph.drawImage(kenPic,this.kenPicx, 110, kenPic.width  , kenPic.height);
+    drawKen(graph){
+        graph.drawImage(this.image,this.kenPicx, 110, this.image.width  , this.image.height);
     }
 
 }

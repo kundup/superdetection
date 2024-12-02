@@ -3,7 +3,7 @@ import { Ryu } from "./ryu.js";
 import { Ken } from "./ken.js";
 
 
-const ken = new Ken();
+const ken = new Ken(kenPic);
 const ryu = new Ryu();
 
 
@@ -20,10 +20,10 @@ function loadingDone(){
     function fighterAnimate () {
     
         graph.drawImage (Bg, 0, 0);
-        ken.drawKen (kenPic, graph);
-        ken.updateKen(kenPic, canvasEl);
-        ryu.drawRyu(ryuPic, graph);
-        ryu.updateRyu(ryuPic, canvasEl)  
+        ken.drawKen (graph);
+        ken.updateKen(canvasEl);
+        ryu.drawRyu(graph);
+        ryu.updateRyu(canvasEl)  
         window.requestAnimationFrame(fighterAnimate);       
     }    
     window.requestAnimationFrame(fighterAnimate);    

@@ -1,19 +1,20 @@
 export class Ryu {
 
-    constructor(){
+    constructor(image){
         this.ryuPicx = 300;
         this.ryuSpeed = -1;
+        this.image = image
     }
 
-    updateRyu(ryuPic,canvasEl) {
+    updateRyu(canvasEl) {
         this.ryuPicx += this.ryuSpeed;
-        if (this.ryuPicx >= canvasEl.width - ryuPic.width || this.ryuPicx < 0){
+        if (this.ryuPicx >= canvasEl.width - this.image.width || this.ryuPicx < 0){
         this.ryuSpeed *= -1;
         }
     }
     
-    drawRyu(ryuPic, graph){
-        graph.drawImage(ryuPic,this.ryuPicx, 110, ryuPic.width  , ryuPic.height);
+    drawRyu(graph){
+        graph.drawImage(this.image, this.ryuPicx, 110, this.image.width, this.image.height);
     }
 
 }
