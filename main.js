@@ -4,7 +4,7 @@ import { Ken } from "./ken.js";
 
 
 const ken = new Ken(kenPic);
-const ryu = new Ryu();
+const ryu = new Ryu(ryuPic);
 
 
 console.log("hello world");
